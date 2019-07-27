@@ -1,3 +1,6 @@
 @function color($color-name) {
     @return map-get($colors, $color-name)
+};
+@function width($width-px) {
+    @return map-get($widths, $width-px)
 }

@@ -1,0 +1,20 @@
+@import 'fonts';
+/* Цвета */
+$colors: (
+    textOnLight: #191b29,
+    textOnDark: #ffffff,
+    buttons_mainBg: #ffd800,
+    servicesText: #9d9fbf,
+    headerBG: #000,
+    links_hover: #ffe347
+);
+/* Шрифты */
+$mainFont: 'Roboto', Helvetica, Arial, sans-serif;
+/* Разрешения */
+$widths: (
+    desktopWidth: 1280px,
+    smDesktopWidth: 992px,
+    tableWidth: 768px,
+    phoneWidth: 500px,
+    smPhoneWidth: 320px
+)

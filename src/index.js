@@ -1,4 +1,5 @@
-import './scss/main.scss'
+import './scss/main.scss';
+import './app/script';
 
 import Jquery from 'jquery/dist/jquery.slim.min';
 import 'popper.js';

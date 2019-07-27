@@ -1,0 +1,116 @@
+@mixin bar_transform($position,$property) {
+    top: $position;
+    transform: $property;
+}
+
+.banner {
+    position: relative;
+    background: url('/assets/img/banner_BG.jpg') no-repeat center/cover;
+    min-height: 880px;
+    header {
+        position: fixed;
+        z-index: 999;
+        width: 100%;
+        .logo {
+            img {
+                @media (max-width: width(smDesktopWidth)) {
+                    width: 140px;
+                    height: auto;
+                }
+            }
+        }
+        .header_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all .4s;
+            padding: 3rem 0;
+            
+            .header_content__menu {
+                @media (max-width: width(tableWidth)) {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                }
+                li {
+                    display: inline-block;
+                    padding: 10px 15px;
+                    @media (max-width: width(tableWidth)) {
+                        margin-bottom: 30px;
+                    }
+                    a {
+                        font-size: 18px;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        @media (min-width: width(tableWidth)) and (max-width: width(smDesktopWidth)) {
+                            font-size: 16px;
+                        }
+                    }
+                } 
+            }
+        }
+    }
+    .header--fixed{
+        background: color(headerBG);
+    }
+}
+.burger_btn {
+	z-index: 99999; 
+	display: none;
+	height: 40px;
+	width: 40px;
+	border: 0;
+	transition: transform .2s;
+    outline: none;
+    &:active,
+    &:focus {
+        outline:none;
+    }
+    @media (max-width: width(tableWidth)) {
+        display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+    }	
+}
+.bar2, .bar1, .bar3 {
+    @extend %btn__bars;
+}
+.bar2 {
+    margin:5px 0;
+    .bar2--active {
+        background:transparent;
+    }
+}
+.bar1--active {
+    @include bar_transform(17%,translateY(50%) rotate(45deg));
+} 
+.bar2--active {
+    @include bar_transform(-17%,translateY(-50%) rotate(-45deg));
+}
+
+@media (max-width: width(tableWidth)) {
+    .navigation {
+		visibility: hidden;
+		position: absolute;
+		background-color: #000;
+		height: 100vh;
+		width: 100vw;
+		top: 0;
+		left: 0;
+		z-index: 99999;
+		opacity: 0;
+		transition: all .4s;
+        .navigation--active {
+            visibility: visible;
+            opacity: .9;
+	    }
+	}
+}
+
+
+
