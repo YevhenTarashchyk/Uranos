@@ -1,6 +1,5 @@
 /* FOR HEADER */
 %links-active {
-    border-radius: 6px;
     background-color: color(buttons_mainBg);
 }
 
@@ -8,8 +7,8 @@
 	position: relative;
 	background: color(textOnDark);
 	display: block;
-    border-radius: 5px;
+    border-radius: 2px;
 	height: 4px;
-	width: 20px;
+	width: 24px;
 	transition: all .4s;
 }
