@@ -1,0 +1,49 @@
+.about {
+    margin-top: -25px;
+    background: color(textOnLight);
+    color: color(textOnDark);
+    @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
+        padding-bottom: 50px;
+    }
+    article {
+        padding-top: 50px;
+        @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
+            padding-top: 25px;
+        }
+        .service {
+            display: flex;
+            align-items: center;
+            .service__icon {
+                margin-right: 20px;
+            }
+            h3 {
+                margin: 0;
+                font-size: 36px;
+                font-weight: 300;
+                text-align: left;
+                @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
+                    font-size: 30px;
+                }
+                @media (max-width: width(smDesktopWidth)) and (min-width: width(tableWidth)) {
+                    font-size: 24px;
+                }
+            }
+        }
+        p {
+            margin: 0;
+            text-align: left;
+            font-size: 16px;
+            line-height: 30px;
+            color: #9d9fbf;
+            padding-top: 20px;
+            font-weight: 300;
+        }
+    }
+    .white-phone {
+        background: url('/assets/img/white_phone.png') no-repeat;
+        background-size: cover; 
+        height: 500px;
+        width: 100%;
+        margin-top: -50px;
+    }
+}

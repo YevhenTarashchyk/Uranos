@@ -4,7 +4,7 @@ let burgerMenu = document.querySelector('.burger_btn').children,
 	header = document.getElementsByTagName('header')[0],
 	rowActive = header.querySelector('.row'),
 	menuItem = document.getElementsByClassName('menu_item'),
-	headerContent = header_content.querySelector('.navigation'),
+	navContent = header_content.querySelector('.navigation'),
 	burgerArr = Array.from(burgerMenu);
 	
 
@@ -21,7 +21,7 @@ function toggleActive(...args) {
 
 /*Клик по бургеру*/
 burger_btn.addEventListener('click', function () {
-	let elActive = burgerArr.map(value => toggleActive(value, mobileNav, rowActive, headerContent));
+	let elActive = burgerArr.map(value => toggleActive(value, mobileNav, rowActive, navContent));
 });
 
 // ресайз окна
@@ -32,7 +32,7 @@ window.onresize = function () {
     smDesktop.classList.replace('container-fluid', 'container');
   }
 	if (window.innerWidth > 768) {
-		burgerArr.map(value => removeActive(value, mobileNav, rowActive, headerContent));
+		burgerArr.map(value => removeActive(value, mobileNav, rowActive, navContent));
 	}
 }
 
@@ -42,9 +42,12 @@ window.addEventListener('scroll', function () {
 	if (scrolled >= 1) {
 		header.classList.add('header--fixed');
 		header_content.style.padding = '10px 0 4px 0';
+		navContent.style.top = '-7px';
+		
 	} else {
 		header.classList.remove('header--fixed');
 		header_content.style.padding = '';
+		navContent.style.top = '';
 	}
 });
 

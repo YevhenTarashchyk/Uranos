@@ -2,6 +2,16 @@
     top: $position;
     transform: $property;
 }
+@mixin common-inputs($border,$border-color,$background-color,$padding) {
+    border: $border solid $border-color;
+    outline: 0;
+    background-color: $background-color;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: $padding;
+    margin-right: 10px;
+}
 
 .banner {
     background: url('/assets/img/banner_BG.jpg') no-repeat center/cover;
@@ -11,7 +21,7 @@
         z-index: 999;
         width: 100%;
         .row {
-            transition: background-color linear .13s;
+            transition: background-color .1s linear .1s;
             .header_content {
                 display: flex;
                 justify-content: space-between;
@@ -23,7 +33,8 @@
                     overflow-y: hidden;
                 }
                 .header_content__icon {
-                
+                    position: relative;
+                    z-index: 99999;
                     cursor: pointer;
                     img {
                         @media (max-width: width(smDesktopWidth)) {
@@ -35,11 +46,11 @@
                 .navigation {
                     height: auto;
                     @media (max-width: width(tableWidth)) {
-                        transition: height ease-out .14s;
+                        transition: height linear .25s, top .5s;
                         overflow: hidden;
                         height: 0px;
                         position: absolute;
-                        top: 100%;
+                        top: 0;
                         left: 50%;
                         transform: translateX(-50%);
                         width: 100%;
@@ -52,6 +63,7 @@
                             flex-direction: column;
                             align-items: center;
                             padding: 7px 0;
+                            margin-top: 60px;
                         }
                         li {
                             display: inline-block;
@@ -75,7 +87,8 @@
                     }
                 }
                 .navigation--active {
-                    height: 209px !important;
+                    @extend .navigation;
+                    height: 269px !important;
                 }
             }
         }
@@ -90,6 +103,8 @@
 .burger_btn {
     cursor: pointer;
     background: transparent;
+    position: relative;
+    z-index: 99999;
 	display: none;
 	height: 40px;
 	width: 40px;
@@ -128,9 +143,6 @@
 .li--active {
     @extend %links-active;
 }
-
-
-
 @media (max-width: width(tableWidth)) {
     .mask {
 		transition: opacity .5s;
@@ -148,6 +160,70 @@
         visibility: visible;
         opacity: .5;
 	}
+}
+
+/* Баннер */
+.banner-main {
+	width: 100%;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+    transform: translate(-50%,-50%);
+    .banner-content {
+        text-align: center;
+        .banner-content__title {
+	        color: color(textOnDark);
+	        font-weight: 100;
+            font-size: 60px;
+            line-height: 70px;
+            margin: 0;
+            @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
+                font-size: 54px;
+            }
+            @media (max-width: width(tableWidth)) and (min-width: width(phoneWidth)) {
+                font-size: 34px;
+            }
+        }
+        .banner-content__subtitle {
+            font-weight: 500;
+            font-size: 60px;
+            color: color(textOnDark);
+            margin: 0;
+            @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
+                font-size: 54px;
+            }
+             @media (max-width: width(tableWidth)) and (min-width: width(phoneWidth)) {
+                font-size: 34px;
+            }
+        }
+    }
+    form {
+        padding-top: 80px;
+        text-align: center;
+        @media (max-width: width(tableWidth)) {
+            padding-top: 30px;
+        }
+        input {
+            color: color(textOnDark);
+            @include common-inputs(1px,color(textOnDark),transparent,20px 0 20px 20px);
+            @media (max-width: width(tableWidth)) {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+        button {
+            cursor: pointer;
+            transition: all .2s linear;
+            @include common-inputs(1px,color(buttons_mainBg),color(buttons_mainBg),20px 35px);
+            &:hover {
+                background: transparent;
+                color: color(buttons_mainBg);
+            }
+            @media (max-width: width(tableWidth)) {
+                width: 100%;
+            }
+        }
+    }
 }
 
 
