@@ -1,49 +1,77 @@
 .about {
-    margin-top: -25px;
     background: color(textOnLight);
     color: color(textOnDark);
-    @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
-        padding-bottom: 50px;
-    }
-    article {
-        padding-top: 50px;
-        @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
-            padding-top: 25px;
+    .row {
+        padding-bottom: 15px;
+        @media (min-width: width(smDesktopWidth)) and (max-width: width(desktopWidth)) {
+            padding-bottom: 35px;
         }
-        .service {
-            display: flex;
-            align-items: center;
-            .service__icon {
-                margin-right: 20px;
+        @media (min-width: width(phoneWidth)) and (max-width: width(smDesktopWidth)) {
+            padding-bottom: 50px;
+        }
+        .services-column {
+            @media (min-width: width(desktopWidth)) {
+                margin-top: 35px;
             }
-            h3 {
-                margin: 0;
-                font-size: 36px;
-                font-weight: 300;
-                text-align: left;
-                @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
-                    font-size: 30px;
+            article {
+                margin-top: 20px;
+                padding-top: 30px;
+                @media (max-width: width(tableWidth)) {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
                 }
-                @media (max-width: width(smDesktopWidth)) and (min-width: width(tableWidth)) {
-                    font-size: 24px;
+                .service {
+                    display: flex;
+                    align-items: center;
+                    .service__icon {
+                        margin-right: 20px;
+                        @media (max-width: width(smDesktopWidth)) and (min-width: width(tableWidth)) {
+                            margin-right: 5px;
+                        }
+                    }
+                    h3 {
+                        margin: 0;
+                        font-size: 36px;
+                        font-weight: 300;
+                        text-align: left;
+                        @media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
+                            font-size: 30px;
+                        }
+                        @media (max-width: width(smDesktopWidth)) and (min-width: width(tableWidth)) {
+                            font-size: 24px;
+                        }
+                    }
+                }
+                p {
+                    margin: 0;
+                    text-align: left;
+                    font-size: 16px;
+                    line-height: 30px;
+                    color: #9d9fbf;
+                    padding-top: 20px;
+                    font-weight: 300;
+                    @media (max-width: width(tableWidth)) {
+                        text-align:center;
+                    }
                 }
             }
         }
-        p {
-            margin: 0;
-            text-align: left;
-            font-size: 16px;
-            line-height: 30px;
-            color: #9d9fbf;
-            padding-top: 20px;
-            font-weight: 300;
+        .phone-column {
+            @media (max-width: width(smDesktopWidth)) {
+                align-self: center;
+            }
+            @media (max-width: 767px) {
+                display: none;
+            }
+            .white-phone {
+                display: block;
+                width: 100%;
+                margin-top: -50px;
+                @media (max-width: width(smDesktopWidth)) {
+                    margin-top: 50px;
+                }
+            }
         }
-    }
-    .white-phone {
-        background: url('/assets/img/white_phone.png') no-repeat;
-        background-size: cover; 
-        height: 500px;
-        width: 100%;
-        margin-top: -50px;
     }
 }

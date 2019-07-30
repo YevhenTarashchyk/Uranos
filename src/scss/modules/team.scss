@@ -1,0 +1,14 @@
+@import 'utils/mixins';
+
+.ourTeam {
+    padding: 136px 0;
+    background: color(buttons_mainBg);
+    .container{
+        .row{
+            text-align: center;
+            .section-content__title{
+                @include title (color(textOnLight),100,60px,70px);
+            }
+        }
+    }
+}

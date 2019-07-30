@@ -1,6 +1,7 @@
 let burgerMenu = document.querySelector('.burger_btn').children,
 	mobileNav = document.getElementsByClassName('mask')[0],
-	smDesktop = banner.querySelector('.container'),
+	bannerContainer = banner.querySelector('.container'),
+	aboutContainer = about.querySelector('.container'),
 	header = document.getElementsByTagName('header')[0],
 	rowActive = header.querySelector('.row'),
 	menuItem = document.getElementsByClassName('menu_item'),
@@ -26,13 +27,16 @@ burger_btn.addEventListener('click', function () {
 
 // ресайз окна
 window.onresize = function () {
+	burgerArr.map(value => removeActive(value, mobileNav, rowActive, navContent));
 	if (window.innerWidth < 992) {
-    smDesktop.classList.replace('container', 'container-fluid');
+    bannerContainer.classList.replace('container', 'container-fluid');
   } else {
-    smDesktop.classList.replace('container-fluid', 'container');
+    bannerContainer.classList.replace('container-fluid', 'container');
   }
-	if (window.innerWidth > 768) {
-		burgerArr.map(value => removeActive(value, mobileNav, rowActive, navContent));
+	if (window.innerWidth < 768) {
+		aboutContainer.classList.replace('container', 'container-fluid');
+	} else {
+		aboutContainer.classList.replace('container-fluid', 'container');
 	}
 }
 

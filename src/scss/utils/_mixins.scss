@@ -1,0 +1,20 @@
+@mixin bar_transform($position,$property) {
+    top: $position;
+    transform: $property;
+}
+@mixin common-inputs($border,$border-color,$background-color,$padding) {
+    border: $border solid $border-color;
+    outline: 0;
+    background-color: $background-color;
+    font-size: 18px;
+    font-weight: 700;
+    border-radius: 3px;
+    padding: $padding;
+    margin-right: 10px;
+}
+@mixin title ($color,$weight,$size,$l-height) {
+        color: $color;
+	    font-weight: $weight;
+        font-size: $size;
+        line-height: $l-height;
+}

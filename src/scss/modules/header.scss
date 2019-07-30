@@ -1,20 +1,6 @@
-@mixin bar_transform($position,$property) {
-    top: $position;
-    transform: $property;
-}
-@mixin common-inputs($border,$border-color,$background-color,$padding) {
-    border: $border solid $border-color;
-    outline: 0;
-    background-color: $background-color;
-    font-size: 18px;
-    font-weight: 700;
-    border-radius: 3px;
-    padding: $padding;
-    margin-right: 10px;
-}
-
+@import 'utils/mixins';
 .banner {
-    background: url('/assets/img/banner_BG.jpg') no-repeat center/cover;
+    position: relative;
     min-height: 880px;
     header {
         position: fixed;
@@ -163,64 +149,68 @@
 }
 
 /* Баннер */
-.banner-main {
-	width: 100%;
-	position: absolute;
-	top: 55%;
-	left: 50%;
-    transform: translate(-50%,-50%);
-    .banner-content {
-        text-align: center;
-        .banner-content__title {
-	        color: color(textOnDark);
-	        font-weight: 100;
-            font-size: 60px;
-            line-height: 70px;
-            margin: 0;
-            @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
-                font-size: 54px;
+.banner__wrapper {
+    background: url('/assets/img/banner_BG.jpg') no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    .banner-main {
+        width: 100%;
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        .banner-content {
+            text-align: center;
+            .section-content__title {
+                @include title (color(textOnDark),100,60px,70px);
+                @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
+                    font-size: 54px;
+                }
+                @media (max-width: width(tableWidth)) and (min-width: width(smPhoneWidth)) {
+                    font-size: 34px;
+                    line-height: 40px;
+                }
             }
-            @media (max-width: width(tableWidth)) and (min-width: width(phoneWidth)) {
-                font-size: 34px;
+            .section-content__subtitle {
+                @include title (color(textOnDark),500,60px,normal);
+                @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
+                    font-size: 54px;
+                }
+                @media (max-width: width(tableWidth)) and (min-width: width(smPhoneWidth)) {
+                    font-size: 34px;
+                }
             }
         }
-        .banner-content__subtitle {
-            font-weight: 500;
-            font-size: 60px;
-            color: color(textOnDark);
-            margin: 0;
-            @media (max-width: width( smDesktopWidth)) and (min-width: width(tableWidth)) {
-                font-size: 54px;
-            }
-             @media (max-width: width(tableWidth)) and (min-width: width(phoneWidth)) {
-                font-size: 34px;
-            }
-        }
-    }
-    form {
-        padding-top: 80px;
-        text-align: center;
-        @media (max-width: width(tableWidth)) {
-            padding-top: 30px;
-        }
-        input {
-            color: color(textOnDark);
-            @include common-inputs(1px,color(textOnDark),transparent,20px 0 20px 20px);
+        form {
+            padding-top: 80px;
+            text-align: center;
             @media (max-width: width(tableWidth)) {
-                width: 100%;
-                margin-bottom: 10px;
+                padding-top: 30px;
             }
-        }
-        button {
-            cursor: pointer;
-            transition: all .2s linear;
-            @include common-inputs(1px,color(buttons_mainBg),color(buttons_mainBg),20px 35px);
-            &:hover {
-                background: transparent;
-                color: color(buttons_mainBg);
+            input {
+                color: color(textOnDark);
+                @include common-inputs(1px,color(textOnDark),transparent,20px 0 20px 20px);
+                @media (max-width: width(tableWidth)) {
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
             }
-            @media (max-width: width(tableWidth)) {
-                width: 100%;
+            button {
+                cursor: pointer;
+                transition: all .2s linear;
+                @include common-inputs(1px,color(buttons_mainBg),color(buttons_mainBg),20px 35px);
+                &:hover {
+                    background: transparent;
+                    color: color(buttons_mainBg);
+                }
+                @media (max-width: width(tableWidth)) {
+                    width: 100%;
+                }
             }
         }
     }

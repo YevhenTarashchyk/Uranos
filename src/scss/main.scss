@@ -6,6 +6,7 @@
 @import 'utils/extends';
 @import 'modules/header';
 @import 'modules/about';
+@import 'modules/team';
 
 * {box-sizing: border-box;}
 body {
@@ -15,6 +16,9 @@ body {
   font-family: $mainFont;
   font-weight: 300;
   color: color(textOnLight);
+}
+h1,h2,h3,h4,h5,h6 {
+  margin: 0;
 }
 ul {
   margin: 0;
