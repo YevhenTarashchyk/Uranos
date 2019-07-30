@@ -1,0 +1,23 @@
+@import 'utils/mixins';
+.macbook {
+    .yellow-strip {
+        @include strip(color(links_hover),270px,left,35px);
+        h4 {
+            @extend %h;
+        }
+        p {
+            @extend %p;
+            padding: 0 50px 30px 0;
+        }
+    }
+    .white-strip {
+        @include strip(color(textOnDark),600px,left,35px);
+        h4 {
+            @extend %h;
+        }
+        p {
+            @extend %p;
+            padding: 0 50px 30px 0;
+        }
+    }
+}

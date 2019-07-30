@@ -18,3 +18,23 @@
         font-size: $size;
         line-height: $l-height;
 }
+
+@mixin h ($size,$weight,$padding) {
+    font-weight: $weight;
+    font-size: $size;
+    padding: $padding;
+}
+
+@mixin p ($size,$weight,$l-height,$opacity) {
+    opacity: $opacity;
+    font-size: $size;
+    font-weight: $weight;
+    line-height: $l-height;
+}
+
+@mixin strip ($bgcolor,$height,$align,$padding) {
+    background-color: $bgcolor;
+    min-height: $height;
+    text-align: $align;
+    padding-top: $padding;
+}

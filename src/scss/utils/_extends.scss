@@ -1,4 +1,5 @@
 /* FOR HEADER */
+@import 'utils/mixins';
 %links-active {
     background-color: color(buttons_mainBg);
 }
@@ -11,4 +12,18 @@
 	height: 4px;
 	width: 24px;
 	transition: all .4s;
+}
+
+%h {
+	@include h (30px,700,15px 0);
+	@media (max-width: width(desktopWidth)) and (min-width: width(smDesktopWidth)) {
+		font-size: 28px;
+	}
+	@media (min-width: width(tableWidth)) and (max-width: width(smDesktopWidth)) {
+		font-size: 20px;
+	}
+}
+
+%p {
+	@include p (18px,300,30px,0.7);
 }
