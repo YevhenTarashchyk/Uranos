@@ -9,6 +9,11 @@
             {
                 "allowForLoopAfterthoughts": true
             }
-        ]
+        ],
+        "no-console":"off",
+        "func-names":"off",
+        "prettier/prettier": [
+            "error",
+        ],
     }
 }
