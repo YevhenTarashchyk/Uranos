@@ -66,7 +66,7 @@ module.exports = {
                     },
                     {
                         loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
+                        options: {sourceMap: true, config: { path: './postcss.config.js'}}
                     },
                     {
                         loader: 'sass-loader',
@@ -85,7 +85,7 @@ module.exports = {
                     },
                     {
                         loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
+                        options: { sourceMap: true, config: { path: './postcss.config.js'}}
                     }
                 ]
             },
