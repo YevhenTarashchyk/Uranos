@@ -1,42 +1,10 @@
 @import 'utils/mixins';
 
 .ourTeam {
-    padding: 136px 0;
-    background: color(buttons_mainBg);
-    .container{
-        .text {
-            text-align: center;
-            .section-content__title{
-                @include title (color(textOnLight),100,60px,70px);
-                @media (max-width: width(tableWidth)) {
-                        font-size: 45px;
-                }
-            }
-            .section-content__subtitle {
-                @include title (color(textOnLight),700,35px,normal);
-                @media (max-width: width(tableWidth)) {
-                        font-size: 30px;
-                }
-            }
-        }
-        .workers-section {
-            .worker{
-                text-align: center;
-                h4 {
-                    @extend %h;
-                }
-                p {
-                    @extend %p;
-                }
-                img{
-                    display: block;
-                    margin: 0 auto;
-                    padding-top: 80px;
-                    @media (max-width: width(tableWidth)) {
-                        padding-top: 30px;
-                    }
-                }
-            }
+    @extend %cardSection;
+    .workers-section {
+        .worker{
+            @extend %card;
         }
     }
 }

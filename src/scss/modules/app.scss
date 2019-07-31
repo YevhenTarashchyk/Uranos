@@ -1,0 +1,21 @@
+@import 'utils/mixins';
+
+.app {
+    background: url('/assets/img/banner2.jpg') no-repeat center;
+    background-size: cover;
+    @extend %cardSection;
+    color: color(textOnDark);
+    padding: 120px 0 100px;
+    .properties-section {
+        .property{
+            @extend %card;
+            p {
+                color: color(servicesText);
+            }
+        }
+    }
+}
+.section-content__title2,
+.section-content__subtitle2 {
+    color: color(textOnDark) !important;
+}
