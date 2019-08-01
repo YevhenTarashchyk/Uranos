@@ -70,7 +70,6 @@ module.exports = {
               sourceMap: true,
               config: { path: './postcss.config.js' },
             },
-<<<<<<< HEAD
           },
           {
             loader: 'sass-loader',
@@ -121,65 +120,3 @@ module.exports = {
     ]),
   ],
 };
-=======
-            {
-                test:/\.scss$/,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true}
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {sourceMap: true}
-                    }
-                ]
-            },
-            {
-                test:/\.css$/,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true}
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
-                    }
-                ]
-            },
-            {
-                test: /.(ttf|otf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-                loader: 'file-loader',
-                options: {
-                  name: '[path][name].[ext]'
-                }
-              }
-            
-        ]
-    },
-    plugins: [  
-        new HtmlWebpackPlugin({
-            hash: false,
-            template: `${PATHS.src}/public/index.html`,
-            inject: 'body'
-        }),
-        new MiniCssExtractPlugin({
-            filename: `${PATHS.assets}css/styles.css`,
-            ignoreOrder: false, 
-          }),
-        new CopyPlugin([
-            {from: `${PATHS.src}/public/fonts`, to: `${PATHS.assets}fonts`},
-            {from: `${PATHS.src}/public/img`, to: `${PATHS.assets}img`}
-        ])
-    ]
-  };
->>>>>>> parent of dedff13... Update webpack.base.conf.js
