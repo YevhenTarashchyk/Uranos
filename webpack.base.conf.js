@@ -52,7 +52,6 @@ module.exports = {
               bypassOnDebug: true,
               disable: true,
             },
-<<<<<<< HEAD
           },
         ],
       },
@@ -92,41 +91,6 @@ module.exports = {
             options: {
               sourceMap: true,
               config: { path: './postcss.config.js' },
-=======
-            {
-                test:/\.scss$/,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true}
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
-                    },
-                    {
-                        loader: 'sass-loader',
-                        options: {sourceMap: true}
-                    }
-                ]
-            },
-            {
-                test:/\.css$/,
-                use: [
-                    'style-loader',
-                    MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {sourceMap: true}
-                    },
-                    {
-                        loader: 'postcss-loader',
-                        options: {sourceMap: true, config: { path: 'src/app/postcss.config.js'}}
-                    }
-                ]
->>>>>>> parent of dedff13... Update webpack.base.conf.js
             },
           },
         ],
