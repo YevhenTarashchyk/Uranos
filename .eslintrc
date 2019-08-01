@@ -1,19 +1,15 @@
 {
-    "extends": [
-        "eslint-config-wesbos"
+  "extends": ["eslint-config-wesbos"],
+  "rules": {
+    "no-unused-vars": 0,
+    "no-plusplus": [
+      "error",
+      {
+        "allowForLoopAfterthoughts": true
+      }
     ],
-    "rules": {
-        "no-unused-vars": 0,
-        "no-plusplus": [
-            "error",
-            {
-                "allowForLoopAfterthoughts": true
-            }
-        ],
-        "no-console":"off",
-        "func-names":"off",
-        "prettier/prettier": [
-            "error",
-        ],
-    }
+    "no-console": "off",
+    "func-names": "off",
+    "prettier/prettier": ["error"]
+  }
 }
