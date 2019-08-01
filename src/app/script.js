@@ -1,12 +1,16 @@
 const burgerMenu = document.querySelector('.burger_btn').children;
 const mobileNav = document.getElementsByClassName('mask')[0];
+const about = document.getElementById('about');
+const banner = document.getElementById('banner');
 const bannerContainer = banner.querySelector('.container');
 const aboutContainer = about.querySelector('.container');
 const header = document.getElementsByTagName('header')[0];
 const rowActive = header.querySelector('.row');
 const menuItem = document.getElementsByClassName('menu_item');
-const navContent = header_content.querySelector('.navigation');
+const headerContent = document.getElementById('header_content');
+const navContent = headerContent.querySelector('.navigation');
 const burgerArr = Array.from(burgerMenu);
+const burgerBtn = document.getElementById('burger_btn');
 
 /* Проверка класса на активность */
 function toggleActive(...args) {
@@ -15,9 +19,24 @@ function toggleActive(...args) {
     args[i].classList.toggle(`${data.action}--active`);
   }
 }
+// функция сделать элемент активным
+function addActive(...args) {
+  for (let i = 0; i < args.length; i++) {
+    const data = args[i].dataset;
+    args[i].classList.add(`${data.action}--active`);
+  }
+}
+
+// функция убрать активность
+function removeActive(...args) {
+  for (let i = 0; i < args.length; i++) {
+    const data = args[i].dataset;
+    args[i].classList.remove(`${data.action}--active`);
+  }
+}
 
 /* Клик по бургеру */
-burger_btn.addEventListener('click', function() {
+burgerBtn.addEventListener('click', function() {
   const elActive = burgerArr.map(value =>
     toggleActive(value, mobileNav, rowActive, navContent)
   );
@@ -43,11 +62,11 @@ window.addEventListener('scroll', function() {
   const scrolled = window.pageYOffset || document.documentElement.scrollTop;
   if (scrolled >= 1) {
     header.classList.add('header--fixed');
-    header_content.style.padding = '10px 0 4px 0';
+    headerContent.style.padding = '10px 0 4px 0';
     navContent.style.top = '-7px';
   } else {
     header.classList.remove('header--fixed');
-    header_content.style.padding = '';
+    headerContent.style.padding = '';
     navContent.style.top = '';
   }
 });
@@ -63,20 +82,4 @@ for (let i = 0; i < menuItem.length; i++) {
     }
     addActive(this, this.parentNode);
   });
-}
-
-// функция сделать элемент активным
-function addActive(...args) {
-  for (let i = 0; i < args.length; i++) {
-    const data = args[i].dataset;
-    args[i].classList.add(`${data.action}--active`);
-  }
-}
-
-// функция убрать активность
-function removeActive(...args) {
-  for (let i = 0; i < args.length; i++) {
-    const data = args[i].dataset;
-    args[i].classList.remove(`${data.action}--active`);
-  }
 }
